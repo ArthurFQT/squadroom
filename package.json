@@ -1,0 +1,23 @@
+{
+  "name": "squadroom",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n shared,server,web -c cyan,green,magenta \"yarn workspace @squadroom/shared build --watch\" \"yarn workspace @squadroom/server dev\" \"yarn workspace web dev --host\"",
+    "dev:web": "yarn workspace web dev",
+    "dev:server": "yarn workspace @squadroom/server dev",
+    "build:web": "yarn workspace @squadroom/shared build && yarn workspace web build",
+    "build:server": "yarn workspace @squadroom/shared build && yarn workspace @squadroom/server build",
+    "start:server": "yarn workspace @squadroom/server start",
+    "build": "yarn workspace @squadroom/shared build && yarn workspace web build && yarn workspace @squadroom/server build",
+    "quality:gate": "yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

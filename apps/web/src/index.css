@@ -1,0 +1,22 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(84, 107, 151, 0.24), transparent 35%),
+    radial-gradient(circle at 88% 90%, rgba(63, 86, 129, 0.24), transparent 40%),
+    linear-gradient(160deg, #070a11, #0b0f17 55%, #111622);
+}
