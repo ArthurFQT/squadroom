@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: squadroom-api
+    runtime: node
+    rootDir: .
+    buildCommand: yarn install --frozen-lockfile && yarn build:server
+    startCommand: yarn start:server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.19.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: CLIENT_ORIGINS
+        sync: false

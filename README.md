@@ -95,33 +95,29 @@ yarn dev
 
 Recommended split:
 - Frontend: Vercel
-- Backend (Socket.IO): Railway
+- Backend (Socket.IO): Render
 
-### 1. Deploy backend on Railway
+### 1. Deploy backend on Render
 
-This repo already includes [`railway.toml`](./railway.toml) with build/start commands.
+This repo already includes [`render.yaml`](./render.yaml) for a backend web service.
 
-Set Railway environment variables:
-- `NIXPACKS_NODE_VERSION=20.19.0`
+Set Render environment variables:
+- `NODE_VERSION=20.19.0`
 - `HOST=0.0.0.0`
-- `PORT=3001` (Railway can override with its own `PORT`)
+- `PORT` is provided by Render automatically
 - `CLIENT_ORIGINS=https://YOUR_VERCEL_DOMAIN.vercel.app`
 
 After deploy, copy backend URL:
-- Example: `https://squadroom-api-production.up.railway.app`
+- Example: `https://squadroom-api.onrender.com`
 
 ### 2. Deploy frontend on Vercel
 
 This repo already includes [`vercel.json`](./vercel.json) for monorepo build output.
 
 Set Vercel environment variable:
-- `VITE_SERVER_URL=https://YOUR_RAILWAY_BACKEND.up.railway.app`
+- `VITE_SERVER_URL=https://YOUR_RENDER_BACKEND.onrender.com`
 
 Deploy and open your Vercel URL on desktop/mobile.
-
-If you deploy frontend on Railway instead of Vercel, set:
-- `NIXPACKS_NODE_VERSION=20.19.0`
-- `VITE_SERVER_URL=https://YOUR_RAILWAY_BACKEND.up.railway.app`
 
 ### 3. Validate voice
 
@@ -141,7 +137,7 @@ If you deploy frontend on Railway instead of Vercel, set:
 - `yarn dev:server`: server only
 - `yarn dev:web`: web only
 - `yarn build:web`: builds shared + web only (Vercel)
-- `yarn build:server`: builds shared + server only (Railway)
+- `yarn build:server`: builds shared + server only (Render)
 - `yarn start:server`: runs backend production server
 - `yarn build`: builds shared, web and server
 - `yarn quality:gate`: alias for build gate
