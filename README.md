@@ -100,6 +100,7 @@ Recommended split:
 ### 1. Deploy backend on Render
 
 This repo already includes [`render.yaml`](./render.yaml) for a backend web service.
+It uses `yarn install --production=false` during build so TypeScript typings are available.
 
 Set Render environment variables:
 - `NODE_VERSION=20.19.0`

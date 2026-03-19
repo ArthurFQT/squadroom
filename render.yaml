@@ -3,7 +3,7 @@ services:
     name: squadroom-api
     runtime: node
     rootDir: .
-    buildCommand: yarn install --frozen-lockfile && yarn build:server
+    buildCommand: yarn install --frozen-lockfile --production=false && yarn build:server
     startCommand: yarn start:server
     healthCheckPath: /health
     envVars:
