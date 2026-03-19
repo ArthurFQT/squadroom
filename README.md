@@ -102,6 +102,7 @@ Recommended split:
 This repo already includes [`railway.toml`](./railway.toml) with build/start commands.
 
 Set Railway environment variables:
+- `NIXPACKS_NODE_VERSION=22`
 - `HOST=0.0.0.0`
 - `PORT=3001` (Railway can override with its own `PORT`)
 - `CLIENT_ORIGINS=https://YOUR_VERCEL_DOMAIN.vercel.app`
@@ -117,6 +118,10 @@ Set Vercel environment variable:
 - `VITE_SERVER_URL=https://YOUR_RAILWAY_BACKEND.up.railway.app`
 
 Deploy and open your Vercel URL on desktop/mobile.
+
+If you deploy frontend on Railway instead of Vercel, set:
+- `NIXPACKS_NODE_VERSION=22`
+- `VITE_SERVER_URL=https://YOUR_RAILWAY_BACKEND.up.railway.app`
 
 ### 3. Validate voice
 

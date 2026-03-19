@@ -7,6 +7,9 @@
     "apps/*",
     "packages/*"
   ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "concurrently -n shared,server,web -c cyan,green,magenta \"yarn workspace @squadroom/shared build --watch\" \"yarn workspace @squadroom/server dev\" \"yarn workspace web dev --host\"",
     "dev:web": "yarn workspace web dev",
